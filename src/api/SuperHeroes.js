@@ -28,3 +28,8 @@ export const getPaginatedData = async (pageNumber) => {
 	const response = await api.get(`/colors?_limit=2&_page=${pageNumber}`);
 	return response.data;
 };
+
+export const addSuperHero = async (hero) => {
+	const response = await api.post(`/superheroes/`, hero);
+	return response.data;
+};

@@ -1,81 +1,146 @@
 {
-	"superheroes": [
-		{
-			"id": 1,
-			"name": "Batman",
-			"alterEgo": "Bruce Wayne"
-		},
-		{
-			"id": 2,
-			"name": "Superman",
-			"alterEgo": "Clark Kent"
-		},
-		{
-			"id": 3,
-			"name": "Wonder Woman 1",
-			"alterEgo": "Princess Diana"
-		}
-	],
-	"friends": [
-		{
-			"id": 1,
-			"name": "chalie"
-		},
-		{
-			"id": 2,
-			"name": "Abe"
-		},
-		{
-			"id": 3,
-			"name": "Melos"
-		}
-	],
-	"users": [
-		{ "id": "chalie@gmail.com", "channelId": "codevolution" },
-		{ "id": "a@gmail.com", "channelId": "agangs" }
-	],
-	"channels": [
-		{
-			"id": "codevolution",
-			"courses": ["react", "vue", "angular"]
-		},
-		{
-			"id": "agangs",
-			"courses": ["c#", "Nodejs", "angular", "Next"]
-		}
-	],
-	"colors": [
-		{
-			"id": 1,
-			"label": "red"
-		},
-		{
-			"id": 2,
-			"label": "blue"
-		},
-		{
-			"id": 3,
-			"label": "green"
-		},
-		{
-			"id": 4,
-			"label": "yellow"
-		},
-		{
-			"id": 5,
-			"label": "black"
-		},
-		{
-			"id": 6,
-			"label": "white"
-		},
-		{
-			"id": 7,
-			"label": "orange"
-		},
-		{
-			"id": 8,
-			"label": "purple"
-		}
-	]
+  "superheroes": [
+    {
+      "id": 1,
+      "name": "Batman",
+      "alterEgo": "Bruce Wayne"
+    },
+    {
+      "id": 2,
+      "name": "Superman",
+      "alterEgo": "Clark Kent"
+    },
+    {
+      "id": 3,
+      "name": "Wonder Woman 1",
+      "alterEgo": "Princess Diana"
+    },
+    {
+      "name": "chalie",
+      "alterEgo": " the king mna",
+      "id": 4
+    },
+    {
+      "name": "adolf",
+      "alterEgo": "The night man",
+      "id": 5
+    },
+    {
+      "name": "test",
+      "alterEgo": " Test best",
+      "id": 6
+    },
+    {
+      "name": "test two",
+      "alterEgo": " Test best two",
+      "id": 7
+    },
+    {
+      "name": "Super",
+      "alterEgo": "Hero",
+      "id": 8
+    },
+    {
+      "name": "Arrow",
+      "alterEgo": "Oliver",
+      "id": 9
+    },
+    {
+      "name": "d",
+      "alterEgo": "d",
+      "id": 10
+    },
+    {
+      "name": "fine",
+      "alterEgo": "fine",
+      "id": 11
+    },
+    {
+      "name": "good",
+      "alterEgo": "man",
+      "id": 12
+    },
+    {
+      "name": "",
+      "alterEgo": "",
+      "id": 13
+    }
+  ],
+  "friends": [
+    {
+      "id": 1,
+      "name": "chalie"
+    },
+    {
+      "id": 2,
+      "name": "Abe"
+    },
+    {
+      "id": 3,
+      "name": "Melos"
+    }
+  ],
+  "users": [
+    {
+      "id": "chalie@gmail.com",
+      "channelId": "codevolution"
+    },
+    {
+      "id": "a@gmail.com",
+      "channelId": "agangs"
+    }
+  ],
+  "channels": [
+    {
+      "id": "codevolution",
+      "courses": [
+        "react",
+        "vue",
+        "angular"
+      ]
+    },
+    {
+      "id": "agangs",
+      "courses": [
+        "c#",
+        "Nodejs",
+        "angular",
+        "Next"
+      ]
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "label": "red"
+    },
+    {
+      "id": 2,
+      "label": "blue"
+    },
+    {
+      "id": 3,
+      "label": "green"
+    },
+    {
+      "id": 4,
+      "label": "yellow"
+    },
+    {
+      "id": 5,
+      "label": "black"
+    },
+    {
+      "id": 6,
+      "label": "white"
+    },
+    {
+      "id": 7,
+      "label": "orange"
+    },
+    {
+      "id": 8,
+      "label": "purple"
+    }
+  ]
 }

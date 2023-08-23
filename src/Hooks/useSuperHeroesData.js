@@ -5,9 +5,9 @@ import {
 	getUsersByEmail,
 	getCoursesByChannelId,
 	getPaginatedData,
-	getInfiniteData,
+	addSuperHero,
 } from "../api/SuperHeroes";
-import { useQuery, useQueryClient } from "react-query";
+import { useMutation, useQuery, useQueryClient } from "react-query";
 
 export const useSuperHeroesData = (onSuccess, onError) => {
 	return useQuery("super-heroes", getSuperHeroes, {
@@ -62,3 +62,28 @@ export const usePaginatedData = (pageNumber) => {
 		}
 	);
 };
+
+export const useAddSuperHeroData = () => {
+	const queryClient = useQueryClient();
+	return useMutation(addSuperHero, {
+		onSuccess: () => {
+			//key super-heroes must be the same as  useSuperHeroesData queryKey
+			queryClient.invalidateQueries("super-heroes");
+		},
+	});
+};
+// the same with the above but this will remove multiple network request
+// export const useAddSuperHeroData = () => {
+// 	const queryClient = useQueryClient();
+// 	return useMutation(addSuperHero, {
+// 		onSuccess: (data) => {
+// 			//key super-heroes must be the same as  useSuperHeroesData queryKey
+// 			queryClient.setQueryData("super-heroes", (oldQueryData) => {
+// 				return {
+// 					...oldQueryData,
+// 					data: [...oldQueryData.data, data.data],
+// 				};
+// 			});
+// 		},
+// 	});
+// };
