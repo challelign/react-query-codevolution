@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { useParams } from "react-router-dom";
 import { useSuperHeroData } from "../Hooks/useSuperHeroesData";
@@ -21,8 +22,11 @@ const RQSuperHeroPage = () => {
 	}
 	return (
 		<div>
-			RQ Super Hero Detail
+			<p>RQ Super Hero Detail</p>
 			<>
+				<button>
+					<Link to={`/rq-super-heroes`}>Back</Link>
+				</button>
 				<div key={heroDetail.id}>
 					<h3>{heroDetail.name}</h3>
 					<h4>{heroDetail.alterEgo}</h4>

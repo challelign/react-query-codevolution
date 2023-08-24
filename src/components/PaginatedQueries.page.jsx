@@ -39,6 +39,7 @@ const PaginatedQueriesPage = () => {
 				<button
 					onClick={() => setPageNumber((page) => page + 1)}
 					disabled={pageNumber === 4}
+					// disabled={!data.length}
 				>
 					next page
 				</button>

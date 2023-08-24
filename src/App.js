@@ -11,9 +11,12 @@ import RQSuperHeroPage from "./components/RQSuperHero.page";
 import DependentQueriesPage from "./components/DependentQueries.page";
 import PaginatedQueriesPage from "./components/PaginatedQueries.page";
 import InfiniteQueryPage from "./components/InfiniteQuery.page";
+import { useState } from "react";
+import SearchBox from "./components/SearchBox";
 
 const queryClient = new QueryClient();
 function App() {
+	const [search, setSearch] = useState("");
 	return (
 		<QueryClientProvider client={queryClient}>
 			<Router>
@@ -58,7 +61,11 @@ function App() {
 							<RQSuperHeroPage />
 						</Route>
 						<Route path="/rq-super-heroes">
-							<RQSuperHeroesPage />
+							<SearchBox
+								search={search}
+								setSearch={(e) => setSearch(e.target.value)}
+							/>
+							<RQSuperHeroesPage search={search} />
 						</Route>
 						<Route path="/super-heroes">
 							<SuperHeroesPage />

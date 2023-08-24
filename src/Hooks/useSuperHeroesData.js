@@ -9,8 +9,10 @@ import {
 } from "../api/SuperHeroes";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 
-export const useSuperHeroesData = (onSuccess, onError) => {
-	return useQuery("super-heroes", getSuperHeroes, {
+export const useSuperHeroesData = (onSuccess, onError, search) => {
+	return useQuery({
+		queryKey: ["super-heroes", search],
+		queryFn: () => getSuperHeroes(search),
 		onSuccess,
 		onError,
 		// cacheTime: 5000, // to reduce no of network request
@@ -24,7 +26,9 @@ export const useSuperHeroesData = (onSuccess, onError) => {
 // getting single hero detail
 export const useSuperHeroData = (heroId) => {
 	const queryClient = useQueryClient(); //setting initial data to the query
-	return useQuery(["super-hero", heroId], () => getSuperHero(heroId), {
+	return useQuery({
+		queryKey: ["super-hero", heroId],
+		queryFn: () => getSuperHero(heroId),
 		initialData: () => {
 			const hero = queryClient
 				.getQueryData("super-hero")
@@ -39,33 +43,36 @@ export const useSuperHeroData = (heroId) => {
 };
 
 export const useUsersDataByEmail = (email) => {
-	return useQuery(["users-by-email", email], () => getUsersByEmail(email));
+	return useQuery({
+		queryKey: ["users-by-email", email],
+		queryFn: () => getUsersByEmail(email),
+	});
 };
 
 export const useCoursesByChannelId = (channelId) => {
-	return useQuery(
-		["courses-by-channelId", channelId],
+	return useQuery({
+		queryKey: ["courses-by-channelId", channelId],
 
-		() => getCoursesByChannelId(channelId),
-		{
-			enable: !channelId,
-		}
-	);
+		queryFn: () => getCoursesByChannelId(channelId),
+
+		enable: !channelId,
+	});
 };
 
 export const usePaginatedData = (pageNumber) => {
-	return useQuery(
-		["paginated-data", pageNumber],
-		() => getPaginatedData(pageNumber),
-		{
-			keepPreviousData: true,
-		}
-	);
+	return useQuery({
+		queryKey: ["paginated-data", pageNumber],
+		queryFn: () => getPaginatedData(pageNumber),
+
+		keepPreviousData: true,
+	});
 };
 
 export const useAddSuperHeroData = () => {
 	const queryClient = useQueryClient();
-	return useMutation(addSuperHero, {
+	return useMutation({
+		mutationFn: addSuperHero,
+		queryKey: "add-hero",
 		onSuccess: () => {
 			//key super-heroes must be the same as  useSuperHeroesData queryKey
 			queryClient.invalidateQueries("super-heroes");
